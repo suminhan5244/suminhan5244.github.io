@@ -36,6 +36,7 @@ h6 {
     font-weight: 700;
 }
 
+hr.star-edu,
 hr.star-light,
 hr.star-primary {
     margin: 25px auto 30px;
@@ -47,6 +48,7 @@ hr.star-primary {
     overflow: visible;
 }
 
+hr.star-edu:after,
 hr.star-light:after,
 hr.star-primary:after {
     content: "\f005";
@@ -58,6 +60,7 @@ hr.star-primary:after {
     font-size: 2em;
 }
 
+hr.star-edu,
 hr.star-light {
     border-color: #fff;
 }
@@ -65,6 +68,11 @@ hr.star-light {
 hr.star-light:after {
     color: #fff;
     background-color: #{{ site.color.primary }};
+}
+
+hr.star-edu:after {
+    color: #fff;
+    background-color: #{{ site.color.tertiary }};
 }
 
 hr.star-primary {
@@ -186,6 +194,11 @@ section.success {
     background: #{{ site.color.primary }};
 }
 
+section.edu {
+    color: #fff;
+    background: #{{ site.color.tertiary }};
+}
+
 @media(max-width:767px) {
     section {
         padding: 75px 0;
@@ -263,12 +276,14 @@ section.success {
     .portfolio-flex-grid .portfolio-flex-row .portfolio-flex-item {
       flex: 1 0 49%;
       max-width: 49%;
+      object-fit: cover;
     }
   }
   @media (min-width: 960px) {
     .portfolio-flex-grid .portfolio-flex-row .portfolio-flex-item {
       flex: 1 0 32%;
       max-width: 32%;
+      object-fit: cover;
     }
   }
   /* A large grid might need four columns on widescreen layouts */
@@ -481,4 +496,67 @@ footer .footer-below {
 .modal.fade.in {
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
+}
+
+
+/* Timeline custom component */
+.timeline-card {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+  
+.timeline-card:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    background-color: #A8A4CE;
+    border-radius: 100%;
+    width: 24px;
+    height: 24px;
+    top: 16px;
+    left: -12px;
+    border: 5px solid;
+    z-index: 2; 
+}
+
+.timeline-head {
+    padding-top: 14px; /* timeline의 헤더 텍스트 윗 부분 */
+    padding-left: 20px;
+}
+  
+.timeline-body {
+    padding-left: 20px;
+    border-left: 2px solid #E9D5CA; 
+}
+  
+.timeline-card-primary:before {
+    border-color: #E9D5CA; 
+}
+  
+.timeline-card-info:before {
+    border-color: #E9D5CA; 
+}
+  
+.timeline-card-secondary:before {
+    border-color: #E9D5CA; 
+}
+  
+.timeline-card-success:before {
+    border-color: #E9D5CA; 
+}
+  
+.title-bold {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.title-BBold {
+    font-size: 24px;
+    font-weight: bold;
+}
+.title-muted {
+    font-size: 16px;
+    font-weight: normal;
+    color: #b4bcc2;
 }
